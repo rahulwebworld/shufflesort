@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+
+var numbers = [1,2,3,4,5,6,7,8,9];
+
+
+function myFunction() {
+
+    for(var i=0; i<numbers.length; i++) {
+         document.getElementsByClassName("square")[i].innerHTML=numbers[i];
+    }
+
+}
+
+function onSort() {
+    numbers.sort(function(x, y){return x - y});
+    myFunction();
+} 
+
+function onShuffle() {
+    numbers.sort(function(){
+        return 0.5 - Math.random();
+    });
+    myFunction();
+} 
+    </script>
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+.head {
+    text-align: center;
+    font-size:20px;
+    font-weight: bold;
+}
+
+.square {
+    font-size:90px;
+    color: #ffffff;
+    text-align:center;
+}
+
+.square1 {
+  height: 200px;
+  width: 200px;
+  background-color: #6F98A8;
+  display: inline-block;
+}
+.square2 {
+    height: 200px;
+  width: 200px;
+  background-color:#2B8EAD;
+  display: inline-block;
+}
+
+.square3 {
+  height: 200px;
+  width: 200px;
+  background-color:#2F454E;
+  display: inline-block;
+}
+
+
+.square4 {
+  height: 200px;
+  width: 200px;
+  background-color:#2B8EAD;
+  display: inline-block;
+}
+
+.square5 {
+  height: 200px;
+  width: 200px;
+  background-color:#2F454E;
+  display: inline-block;
+}
+
+.square6 {
+  height: 200px;
+  width: 200px;
+  background-color:#BFBFBF;
+  display: inline-block;
+}
+
+.square7 {
+    height: 200px;
+  width: 200px;
+  background-color:#BFBFBF;
+  display: inline-block;
+}
+
+.square8 {
+  height: 200px;
+  width: 200px;
+  background-color:#2B8EAD;
+  display: inline-block;
+}
+
+.square9 {
+  height:200px;
+  width: 200px;
+  background-color:#2F454E;
+  display: inline-block;
+}
+
+.column {
+  float: left;
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.left {
+  width: 75%;
+}
+
+.right {
+  width: 25%;
+  height: 66px;
+}
+
+.button {
+  background-color: rgb(94, 173, 197); 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  width: 110px;
+  border-radius: 6%;
+}
+
+#mobilebutton {
+      display: none;
+  }
+
+  @media screen and (min-width: 500px) { 
+   .column {
+    height: 700px;
+   } 
+
+  }
+.smallbox {
+    display: none
+}
+@media screen and (max-width: 480px) {
+  .column {
+    width: 111%;
+    background-color:white!important;
+  }
+
+  .smallbox{
+      width: 2%!important;
+      height: 50px;
+      display: inline-block;
+  }
+
+  .smallbox1 {
+    background-color:#6F98A8;
+
+  }
+
+  .smallbox2 {
+    background-color:#2B8EAD;
+
+  }
+
+  .smallbox3 {
+    background-color:#2F454E;
+
+  }
+
+  .smallbox4 {
+    background-color:#2B8EAD;
+
+  }
+
+  .smallbox5 {
+    background-color:#2F454E;
+
+  }
+
+  .smallbox6 {
+    background-color:#BFBFBF;
+
+  }
+
+  .smallbox7 {
+    background-color:#BFBFBF;
+
+  }
+
+  .smallbox8 {
+    background-color:#2B8EAD;
+
+  }
+
+  
+  .smallbox9 {
+    background-color:#2F454E;
+
+  }
+  #mobilebutton {
+      display: block;
+      text-align: center;
+  }
+  #desktopbutton {
+      display: none;
+  }
+  .space {
+      margin-top: 6px;
+  }
+  .square {
+    height: 50px;
+    width: 96%;
+    font-size:54px!important;
+    background-color:rgb(238, 232, 232)!important;
+    color:black!important;
+  }
+
+  .head {
+      font-size:30px;
+      background-color:rgb(70, 67, 67);
+      font-family: sans-serif;
+      color: white;
+      text-align:center;
+      height: 50px;
+      width: 110%;
+  }
+}
+
+</style>
+</head>
+<body onload="myFunction()">
+<div class="head">Shuffle and Sort</div>
+<div class="row">
+    <div class="column right" id="mobilebutton" style="background-color:rgb(238, 232, 232);">
+        <button onclick = onShuffle() class="button" id="shuffle">Shuffle</button>
+        <button onclick = onSort() class="button" id="sort">Sort</button>
+    </div>
+    <div class="column left" style="background-color:rgb(238, 232, 232);">
+        <div>
+            <div class="smallbox smallbox1"></div><div class="square square1 space"></div>
+            <div class="smallbox smallbox2"></div><div class="square square2 space">
+            </div>
+            <div class="smallbox smallbox3"></div><div class="square square3 space">
+            </div>
+        </div>
+        <div>
+            <div class="smallbox smallbox4"></div><div class="square square4 space">
+        </div>
+        <div class="smallbox smallbox5"></div><div class="square square5 space">
+        </div>
+        <div class="smallbox smallbox6"></div><div class="square square6 space">
+        </div>
+        </div>
+        <div>
+            <div class="smallbox smallbox7"></div><div class="square square7 space">
+            </div>
+            <div class="smallbox smallbox8"></div><div class="square square8 space">
+            </div>
+            <div class="smallbox smallbox9"></div><div class="square square9 space">
+            </div>
+        </div>
+    </div>
+
+    <div class="column right" id="desktopbutton" style="background-color:rgb(238, 232, 232);">
+        <button onclick = onShuffle() class="button" id="shuffle">Shuffle</button>
+        <button onclick = onSort() class="button" id="sort">Sort</button>
+    </div>
+</div>
+<div style="padding:15px;text-align: center;">Shuffle and Sort By Rahul Pamnani</div>
+</body>
+</html> 
